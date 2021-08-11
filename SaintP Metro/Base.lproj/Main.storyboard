@@ -17,13 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aB2-5m-wnB" userLabel="MapView">
+                            <view clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="aB2-5m-wnB" userLabel="MapView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="622"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro_map" translatesAutoresizingMaskIntoConstraints="NO" id="Fxg-xp-duq">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="622"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUq-Ly-Owi" userLabel="ParnasButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUq-Ly-Owi" userLabel="ParnasButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="60" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -35,7 +32,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHe-UA-Op3" userLabel="ProspektProsvesheniiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHe-UA-Op3" userLabel="ProspektProsvesheniiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="80" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -49,7 +46,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDZ-xt-bWx" userLabel="OzerkiButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDZ-xt-bWx" userLabel="OzerkiButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="98" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -61,7 +58,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8o-hu-A4P" userLabel="UdelnaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8o-hu-A4P" userLabel="UdelnaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="116" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -73,7 +70,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdi-0B-CHt" userLabel="PionerskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdi-0B-CHt" userLabel="PionerskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="134" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -85,7 +82,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js0-Nl-0Wa" userLabel="ChernaiaRechkaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js0-Nl-0Wa" userLabel="ChernaiaRechkaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="152" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -99,7 +96,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8Y-wj-mgd" userLabel="PetrogradskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8Y-wj-mgd" userLabel="PetrogradskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="205" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -111,7 +108,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MP-5W-Pxc" userLabel="GorkovskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MP-5W-Pxc" userLabel="GorkovskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="233" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -123,7 +120,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mp1-yT-9ua" userLabel="NevskiiProspektButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mp1-yT-9ua" userLabel="NevskiiProspektButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="278" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -137,7 +134,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-Ou-MsE" userLabel="SennaiaPloshadButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-Ou-MsE" userLabel="SennaiaPloshadButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="340" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -149,7 +146,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHH-at-hxX" userLabel="Tekhnolozhka2Button">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHH-at-hxX" userLabel="Tekhnolozhka2Button" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="390" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -161,7 +158,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9p-fI-Ouw" userLabel="FrunzenskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9p-fI-Ouw" userLabel="FrunzenskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="414" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -173,7 +170,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zN4-z1-QLj" userLabel="MoskovskieVorotaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zN4-z1-QLj" userLabel="MoskovskieVorotaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="432" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -187,7 +184,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ro1-9R-eVq" userLabel="ElektrosilaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ro1-9R-eVq" userLabel="ElektrosilaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="449" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -199,7 +196,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdO-Ep-Mej" userLabel="ParkPobedyButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdO-Ep-Mej" userLabel="ParkPobedyButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="467" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -211,7 +208,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JR-nE-qYX" userLabel="MoskovskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JR-nE-qYX" userLabel="MoskovskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="485" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -223,7 +220,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4G-RZ-rgJ" userLabel="ZvezdnaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4G-RZ-rgJ" userLabel="ZvezdnaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="532" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -235,7 +232,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxY-mC-gbQ" userLabel="KupchinoButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxY-mC-gbQ" userLabel="KupchinoButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="550" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -247,7 +244,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqd-DP-Ldr" userLabel="BegovaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqd-DP-Ldr" userLabel="BegovaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="9" y="152" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -259,7 +256,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edq-W1-g7T" userLabel="ZenitButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edq-W1-g7T" userLabel="ZenitButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="9" y="184" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -271,7 +268,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJd-1G-p3N" userLabel="PrimorskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJd-1G-p3N" userLabel="PrimorskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="50" y="257" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -283,7 +280,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7d-9R-Qzc" userLabel="VasileostrovskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7d-9R-Qzc" userLabel="VasileostrovskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="80" y="288" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -295,7 +292,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEx-Ht-LSH" userLabel="GostinyiDvorButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEx-Ht-LSH" userLabel="GostinyiDvorButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="288" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -309,7 +306,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ef-1t-qC1" userLabel="MaiakovskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ef-1t-qC1" userLabel="MaiakovskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="288" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -321,7 +318,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD3-8h-2cX" userLabel="PloshadNevskogo1Button">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD3-8h-2cX" userLabel="PloshadNevskogo1Button" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="269" y="340" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -333,7 +330,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGe-Wn-bfK" userLabel="ElizarovskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGe-Wn-bfK" userLabel="ElizarovskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="294" y="376" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -345,7 +342,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISk-cm-Eg8" userLabel="LomonosovskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISk-cm-Eg8" userLabel="LomonosovskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="303" y="389" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -357,7 +354,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-de-bO1" userLabel="ProletarskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axo-de-bO1" userLabel="ProletarskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="321" y="414" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -369,7 +366,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuv-88-ejc" userLabel="ObukhovoButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuv-88-ejc" userLabel="ObukhovoButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="333" y="433" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -381,7 +378,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qk-ET-5MA" userLabel="RybatskoeButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qk-ET-5MA" userLabel="RybatskoeButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="347" y="449" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
@@ -393,7 +390,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F0-TZ-UBg" userLabel="SpasskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F0-TZ-UBg" userLabel="SpasskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="330" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -405,7 +402,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnn-b9-OUr" userLabel="DostoevskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnn-b9-OUr" userLabel="DostoevskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="330" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -417,7 +414,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acD-sN-8OI" userLabel="LigovskiiProspektButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acD-sN-8OI" userLabel="LigovskiiProspektButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="246" y="330" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -431,7 +428,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuF-bc-ntx" userLabel="PloshadNevskogo2Button">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuF-bc-ntx" userLabel="PloshadNevskogo2Button" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="269" y="330" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -443,7 +440,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt6-BP-K25" userLabel="NovocherkasskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt6-BP-K25" userLabel="NovocherkasskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="321" y="352" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -455,7 +452,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oib-Cf-P0D" userLabel="LadozhskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oib-Cf-P0D" userLabel="LadozhskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="335" y="370" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -467,7 +464,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxd-tM-0bC" userLabel="ProspektBolshevikovButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxd-tM-0bC" userLabel="ProspektBolshevikovButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="350" y="389" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -481,7 +478,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlU-Y7-a2G" userLabel="UlitsaDybenkoButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlU-Y7-a2G" userLabel="UlitsaDybenkoButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="364" y="405" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -495,7 +492,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBt-jR-cU2" userLabel="ShusharyButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBt-jR-cU2" userLabel="ShusharyButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="567" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -507,7 +504,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fw7-q9-T67" userLabel="DunaiskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fw7-q9-T67" userLabel="DunaiskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="549" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -519,7 +516,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykg-bS-w3V" userLabel="ProspektSlavyButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykg-bS-w3V" userLabel="ProspektSlavyButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="530" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -531,7 +528,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55e-fC-3fx" userLabel="MezhdunarodnaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55e-fC-3fx" userLabel="MezhdunarodnaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="512" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -543,7 +540,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVP-55-HjT" userLabel="BukharestskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVP-55-HjT" userLabel="BukharestskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="494" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -555,7 +552,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDy-uf-evv" userLabel="VolkovskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDy-uf-evv" userLabel="VolkovskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="476" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -567,7 +564,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvv-kb-4g9" userLabel="ObvodyiKanalButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvv-kb-4g9" userLabel="ObvodyiKanalButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="458" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -579,7 +576,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fk4-uC-s5x" userLabel="ZvenigorodskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fk4-uC-s5x" userLabel="ZvenigorodskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="191" y="355" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -591,7 +588,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTt-3R-Zho" userLabel="SadovaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTt-3R-Zho" userLabel="SadovaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="320" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -603,7 +600,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0J-Tu-0Gc" userLabel="AdmiralteiskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0J-Tu-0Gc" userLabel="AdmiralteiskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="153" y="301" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -615,7 +612,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrj-W5-pz1" userLabel="SportivnaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrj-W5-pz1" userLabel="SportivnaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="116" y="245" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -627,7 +624,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nko-VJ-R86" userLabel="ChkalovskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nko-VJ-R86" userLabel="ChkalovskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="102" y="224" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -639,7 +636,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlW-5c-wbB" userLabel="KrestovskiiOstrovButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlW-5c-wbB" userLabel="KrestovskiiOstrovButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="84" y="196" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -653,7 +650,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dO-WC-gr1" userLabel="StaraiaDerevniaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dO-WC-gr1" userLabel="StaraiaDerevniaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="84" y="134" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -665,7 +662,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mha-cn-03o" userLabel="KomendantskiiProspektButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mha-cn-03o" userLabel="KomendantskiiProspektButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="84" y="116" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
@@ -677,7 +674,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRH-9p-FEr" userLabel="DeviatkinoButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRH-9p-FEr" userLabel="DeviatkinoButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="107" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -689,7 +686,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmD-Bo-Aod" userLabel="GrazhdanskiiProspektButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmD-Bo-Aod" userLabel="GrazhdanskiiProspektButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="125" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -701,7 +698,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0j-iF-HRv" userLabel="AkademicheskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0j-iF-HRv" userLabel="AkademicheskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="143" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -713,7 +710,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oq0-hR-Xl8" userLabel="PolitekhnicheskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oq0-hR-Xl8" userLabel="PolitekhnicheskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="161" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -725,7 +722,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPw-ke-M2k" userLabel="PloshadMuzhestvaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPw-ke-M2k" userLabel="PloshadMuzhestvaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="179" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -737,7 +734,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCL-yK-CBL" userLabel="LesnaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCL-yK-CBL" userLabel="LesnaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="197" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -749,7 +746,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Si-sC-IOQ" userLabel="VyborgskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Si-sC-IOQ" userLabel="VyborgskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="215" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -761,7 +758,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cx1-LV-4Y6" userLabel="PloshadLeninaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cx1-LV-4Y6" userLabel="PloshadLeninaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="233" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -773,7 +770,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rW-LA-CrY" userLabel="ChernyshevskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rW-LA-CrY" userLabel="ChernyshevskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="260" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -785,7 +782,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7X-2f-lT7" userLabel="PloshadVosstaniiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7X-2f-lT7" userLabel="PloshadVosstaniiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="278" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -797,7 +794,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i05-N8-ZnI" userLabel="VladimirskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i05-N8-ZnI" userLabel="VladimirskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="231" y="340" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -809,7 +806,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFS-wj-9sS" userLabel="PushkinskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFS-wj-9sS" userLabel="PushkinskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="191" y="364" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -821,7 +818,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kf-Rh-qz9" userLabel="Tekhnolozhka1Button">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kf-Rh-qz9" userLabel="Tekhnolozhka1Button" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="166" y="380" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -833,7 +830,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzH-qG-r7L" userLabel="BaltiiskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzH-qG-r7L" userLabel="BaltiiskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="102" y="424" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -845,7 +842,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4W-bn-2fd" userLabel="NarvskaiaButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m4W-bn-2fd" userLabel="NarvskaiaButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="102" y="440" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -857,7 +854,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phe-cs-eXm" userLabel="KirovskiiZavodButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phe-cs-eXm" userLabel="KirovskiiZavodButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="102" y="458" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -869,7 +866,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0F-op-Rtq" userLabel="AvtovoButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0F-op-Rtq" userLabel="AvtovoButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="102" y="476" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -881,12 +878,19 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2G-GP-EMR" userLabel="LeninskiiProspektButton">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2G-GP-EMR" userLabel="LeninskiiProspektButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="102" y="512" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSg-QT-3qh" userLabel="ProspektVeteranovButton">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ленинский проспект" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgT-W2-VE2" userLabel="LeninskiiProspektLabel">
+                                        <rect key="frame" x="20" y="510" width="81" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSg-QT-3qh" userLabel="ProspektVeteranovButton" customClass="StationButton" customModule="SaintP_Metro" customModuleProvider="target">
                                         <rect key="frame" x="102" y="532" width="10" height="10"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -898,26 +902,9 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ленинский проспект" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgT-W2-VE2" userLabel="LeninskiiProspektLabel">
-                                        <rect key="frame" x="20" y="510" width="81" height="15"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstItem="Fxg-xp-duq" firstAttribute="top" secondItem="aB2-5m-wnB" secondAttribute="top" id="4fT-xc-ujN"/>
-                                    <constraint firstAttribute="bottom" secondItem="Fxg-xp-duq" secondAttribute="bottom" id="BIj-B3-jpe"/>
-                                    <constraint firstAttribute="trailing" secondItem="Fxg-xp-duq" secondAttribute="trailing" id="Sft-LF-7SU"/>
-                                    <constraint firstAttribute="height" constant="622" id="YfD-fx-QiP"/>
-                                    <constraint firstItem="Fxg-xp-duq" firstAttribute="leading" secondItem="aB2-5m-wnB" secondAttribute="leading" id="g0r-K4-dja"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="p56-8D-n07" appends="YES" id="y6t-bL-wqG"/>
-                                </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-t4-w8S">
                                 <rect key="frame" x="20" y="696" width="374" height="49"/>
@@ -928,7 +915,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Станция прибытия: не выбрана" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSt-Iv-mXw">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Станция прибытия: не выбрана" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSt-Iv-mXw">
                                         <rect key="frame" x="0.0" y="26" width="374" height="23"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                                         <nil key="textColor"/>
@@ -955,14 +942,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="aB2-5m-wnB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1S6-S8-QXZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="b4K-eu-ZIN" secondAttribute="trailing" constant="20" id="3iy-qq-s8u"/>
                             <constraint firstItem="b4K-eu-ZIN" firstAttribute="top" secondItem="aVT-t4-w8S" secondAttribute="bottom" constant="52" id="A39-cr-aIe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aB2-5m-wnB" secondAttribute="trailing" id="IAE-YT-jep"/>
+                            <constraint firstItem="aB2-5m-wnB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MF6-dN-b4Q"/>
                             <constraint firstItem="aVT-t4-w8S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QWa-UK-NE7"/>
                             <constraint firstItem="b4K-eu-ZIN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="R6s-nP-BV1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aB2-5m-wnB" secondAttribute="trailing" id="Rmk-7j-5SB"/>
-                            <constraint firstItem="aB2-5m-wnB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="UTS-kq-SfK"/>
                             <constraint firstAttribute="trailing" secondItem="aVT-t4-w8S" secondAttribute="trailing" constant="20" id="Y5x-si-UB1"/>
+                            <constraint firstItem="aB2-5m-wnB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YcS-bs-1Xi"/>
                             <constraint firstItem="aVT-t4-w8S" firstAttribute="top" secondItem="aB2-5m-wnB" secondAttribute="bottom" constant="30" id="dod-1z-JKg"/>
                             <constraint firstItem="aB2-5m-wnB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gpj-9j-guY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="b4K-eu-ZIN" secondAttribute="bottom" constant="15" id="rsh-d5-83K"/>
@@ -970,7 +957,6 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <pinchGestureRecognizer scale="3" id="p56-8D-n07"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </scene>
@@ -1004,8 +990,225 @@
             <point key="canvasLocation" x="972" y="94"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0F0-TZ-UBg">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="0MP-5W-Pxc">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="2Qk-ET-5MA">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="2rW-LA-CrY">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="3kf-Rh-qz9">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="4Si-sC-IOQ">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="55e-fC-3fx">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="5dO-WC-gr1">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="8JR-nE-qYX">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="9ef-1t-qC1">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Axo-de-bO1">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Dnn-b9-OUr">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="EGe-Wn-bfK">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Fw7-q9-T67">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="GlW-5c-wbB">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="I8Y-wj-mgd">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="ISk-cm-Eg8">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="JSg-QT-3qh">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="KHe-UA-Op3">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="KUq-Ly-Owi">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="LHH-at-hxX">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="M0j-iF-HRv">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Mha-cn-03o">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Mp1-yT-9ua">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="NdO-Ep-Mej">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Phe-cs-eXm">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Pt6-BP-K25">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="R7X-2f-lT7">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Rrj-W5-pz1">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="S8o-hu-A4P">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="SlU-Y7-a2G">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="SuF-bc-ntx">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Uuv-88-ejc">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="VzH-qG-r7L">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="XmD-Bo-Aod">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Yqd-DP-Ldr">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="a9p-fI-Ouw">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="acD-sN-8OI">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="bTt-3R-Zho">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="c0F-op-Rtq">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="c0J-Tu-0Gc">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="cEx-Ht-LSH">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="cx1-LV-4Y6">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="edq-W1-g7T">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="fCL-yK-CBL">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="fk4-uC-s5x">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="gBt-jR-cU2">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="gdi-0B-CHt">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="hD3-8h-2cX">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="hDZ-xt-bWx">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="i05-N8-ZnI">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="js0-Nl-0Wa">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="kvv-kb-4g9">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="lDy-uf-evv">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="m2G-GP-EMR">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="m4W-bn-2fd">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="nko-VJ-R86">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="oPw-ke-M2k">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="oib-Cf-P0D">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="oq0-hR-Xl8">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="pxY-mC-gbQ">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="qxd-tM-0bC">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="rFS-wj-9sS">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="ro1-9R-eVq">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="s7d-9R-Qzc">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="sVP-55-HjT">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="vfC-Ou-MsE">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="y4G-RZ-rgJ">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="ykg-bS-w3V">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="zJd-1G-p3N">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="zN4-z1-QLj">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="zRH-9p-FEr">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <resources>
-        <image name="metro_map" width="1600" height="2125"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

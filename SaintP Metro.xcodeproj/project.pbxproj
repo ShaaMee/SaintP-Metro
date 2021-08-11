@@ -14,6 +14,7 @@
 		CE375CD326C163BC00917607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE375CD226C163BC00917607 /* Assets.xcassets */; };
 		CE375CD626C163BC00917607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE375CD426C163BC00917607 /* LaunchScreen.storyboard */; };
 		CE375CDF26C164B300917607 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE375CDE26C164B300917607 /* .gitignore */; };
+		CE54F1CC26C471210049A4F5 /* StationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54F1CB26C471200049A4F5 /* StationButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CE375CD526C163BC00917607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE375CD726C163BC00917607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE375CDE26C164B300917607 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CE54F1CB26C471200049A4F5 /* StationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				CE375CC926C163B800917607 /* AppDelegate.swift */,
 				CE375CCB26C163B800917607 /* SceneDelegate.swift */,
 				CE375CCD26C163B800917607 /* ViewController.swift */,
+				CE54F1CB26C471200049A4F5 /* StationButton.swift */,
 				CE375CCF26C163B800917607 /* Main.storyboard */,
 				CE375CD226C163BC00917607 /* Assets.xcassets */,
 				CE375CD426C163BC00917607 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE54F1CC26C471210049A4F5 /* StationButton.swift in Sources */,
 				CE375CCE26C163B800917607 /* ViewController.swift in Sources */,
 				CE375CCA26C163B800917607 /* AppDelegate.swift in Sources */,
 				CE375CCC26C163B800917607 /* SceneDelegate.swift in Sources */,
