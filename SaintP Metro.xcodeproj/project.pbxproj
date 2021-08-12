@@ -14,6 +14,10 @@
 		CE375CD326C163BC00917607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE375CD226C163BC00917607 /* Assets.xcassets */; };
 		CE375CD626C163BC00917607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE375CD426C163BC00917607 /* LaunchScreen.storyboard */; };
 		CE375CDF26C164B300917607 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CE375CDE26C164B300917607 /* .gitignore */; };
+		CE40507B26C5681A00466860 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40507A26C5681A00466860 /* Station.swift */; };
+		CE40507E26C5686000466860 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40507D26C5686000466860 /* Edge.swift */; };
+		CE40508126C5695B00466860 /* MetroGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40508026C5695B00466860 /* MetroGraph.swift */; };
+		CE40508426C57AB900466860 /* BezierLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40508326C57AB800466860 /* BezierLine.swift */; };
 		CE54F1CC26C471210049A4F5 /* StationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54F1CB26C471200049A4F5 /* StationButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,10 @@
 		CE375CD526C163BC00917607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE375CD726C163BC00917607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE375CDE26C164B300917607 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		CE40507A26C5681A00466860 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		CE40507D26C5686000466860 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		CE40508026C5695B00466860 /* MetroGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroGraph.swift; sourceTree = "<group>"; };
+		CE40508326C57AB800466860 /* BezierLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierLine.swift; sourceTree = "<group>"; };
 		CE54F1CB26C471200049A4F5 /* StationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +72,10 @@
 				CE375CC926C163B800917607 /* AppDelegate.swift */,
 				CE375CCB26C163B800917607 /* SceneDelegate.swift */,
 				CE375CCD26C163B800917607 /* ViewController.swift */,
+				CE40508026C5695B00466860 /* MetroGraph.swift */,
+				CE40507A26C5681A00466860 /* Station.swift */,
+				CE40507D26C5686000466860 /* Edge.swift */,
+				CE40508326C57AB800466860 /* BezierLine.swift */,
 				CE54F1CB26C471200049A4F5 /* StationButton.swift */,
 				CE375CCF26C163B800917607 /* Main.storyboard */,
 				CE375CD226C163BC00917607 /* Assets.xcassets */,
@@ -145,9 +157,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE54F1CC26C471210049A4F5 /* StationButton.swift in Sources */,
+				CE40507B26C5681A00466860 /* Station.swift in Sources */,
+				CE40507E26C5686000466860 /* Edge.swift in Sources */,
 				CE375CCE26C163B800917607 /* ViewController.swift in Sources */,
+				CE40508426C57AB900466860 /* BezierLine.swift in Sources */,
 				CE375CCA26C163B800917607 /* AppDelegate.swift in Sources */,
 				CE375CCC26C163B800917607 /* SceneDelegate.swift in Sources */,
+				CE40508126C5695B00466860 /* MetroGraph.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

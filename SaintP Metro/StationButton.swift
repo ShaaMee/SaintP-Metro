@@ -7,8 +7,11 @@
 
 import UIKit
 
-@IBDesignable
+
 class StationButton: UIButton {
+  
+  var label = UILabel()
+  weak var station: Station?
   
   override func draw(_ rect: CGRect) {
     self.layer.cornerRadius = self.bounds.width / 2
