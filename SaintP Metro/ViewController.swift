@@ -201,6 +201,8 @@ class ViewController: UIViewController {
     spbMetro.addEdgeBetween(spasskaiaStation, and: sennaiaStation, withWeight: 3)
     spbMetro.addEdgeBetween(sennaiaStation, and: sadovaiaStation, withWeight: 3)
     
+    
+    mapView.clipsToBounds = false
 
         
     for edge in spbMetro.edges {
