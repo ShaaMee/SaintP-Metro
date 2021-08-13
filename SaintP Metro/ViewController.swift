@@ -301,17 +301,17 @@ class ViewController: UIViewController {
       largeCircle(sender: sender)
       updateRouteLabels()
       
-    case (nil, _):
-      if sender.station == toStation {
-        largeCircle(sender: fromStation?.button)
-        smallCircle(sender: sender)
-        fromStation = toStation
-        toStation = nil
-      } else {
-        fromStation = sender.station
-        largeCircle(sender: sender)
-      }
-      updateRouteLabels()
+//    case (nil, _):
+//      if sender.station == toStation {
+//        largeCircle(sender: fromStation?.button)
+//        smallCircle(sender: sender)
+//        fromStation = toStation
+//        toStation = nil
+//      } else {
+//        fromStation = sender.station
+//        largeCircle(sender: sender)
+//      }
+//      updateRouteLabels()
       
     case (_, nil):
       if sender.station == fromStation {
@@ -322,8 +322,12 @@ class ViewController: UIViewController {
       } else {
         toStation = sender.station
         largeCircle(sender: sender)
-        guard let fromStation = fromStation, let toStation = toStation else { break }
-        spbMetro.findShortestPath(between: fromStation, and: toStation)
+        
+        if fromStation != nil && toStation != nil {
+          DispatchQueue.global(qos: .background).async { [weak self] in
+            self?.spbMetro.findShortestPath(between: (self?.fromStation)!, and: (self?.toStation)!)
+          }
+        }
       }
       updateRouteLabels()
       

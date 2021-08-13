@@ -26,6 +26,11 @@ class MetroGraph {
   
   func findShortestPath(between startVertex: Station, and finishVertex: Station) {
     
+    for station in allVertices {
+      station.previousVertex = nil
+      station.shortestDistanceFromStart = Int.max
+    }
+    
     var unvisitedVertices = allVertices
     startVertex.shortestDistanceFromStart = 0
     var currentVertex = startVertex
