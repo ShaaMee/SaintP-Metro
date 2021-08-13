@@ -11,15 +11,13 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var showDetailsButton: UIButton!
   @IBOutlet weak var mapView: UIView!
+  @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var fromStationLabel: UILabel!
   @IBOutlet weak var toStationLabel: UILabel!
-  
-  var pinchGestureRecognizer = UIPinchGestureRecognizer()
-  var panGestureRecognizer = UIPanGestureRecognizer()
-  var initialCenter = CGPoint()
-  
+    
   var buttonDiameter: CGFloat {
-    self.view.layer.frame.width / 40
+    let side = min(self.view.layer.frame.width, self.view.layer.frame.height)
+    return side / 40
   }
   
   let spbMetro = MetroGraph()
@@ -30,12 +28,21 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    mapView.clipsToBounds = false
-    mapView.isUserInteractionEnabled = true
-    mapView.addGestureRecognizer(pinchGestureRecognizer)
-    mapView.addGestureRecognizer(panGestureRecognizer)
-    pinchGestureRecognizer.addTarget(self, action: #selector(pinchGesture))
-    panGestureRecognizer.addTarget(self, action: #selector(panGesture))
+    scrollView.delegate = self
+    scrollView.decelerationRate = .fast
+    scrollView.showsVerticalScrollIndicator = false
+    scrollView.showsHorizontalScrollIndicator = false
+    
+    let scrollViewSize = scrollView.bounds.size
+    let mapViewSize = mapView.bounds.size
+    
+    let xScale = scrollViewSize.width / mapViewSize.width
+    let yScale = scrollViewSize.height / mapViewSize.height
+    let minScale = min(xScale, yScale)
+    
+    
+    scrollView.minimumZoomScale = minScale
+    scrollView.maximumZoomScale = 3
     
     showDetailsButton.layer.cornerRadius = showDetailsButton.bounds.height / 4
     
@@ -214,6 +221,7 @@ class ViewController: UIViewController {
     spbMetro.addEdgeBetween(spasskaiaStation, and: sennaiaStation, withWeight: 3)
     spbMetro.addEdgeBetween(sennaiaStation, and: sadovaiaStation, withWeight: 3)
 
+
     for edge in spbMetro.edges {
       let edgeView = BezierLine(edge: edge, view: self.view)
       mapView.addSubview(edgeView)
@@ -225,6 +233,7 @@ class ViewController: UIViewController {
     for station in spbMetro.allVertices {
       mapView.addSubview(station.button.label)
     }
+  
     mapView.layoutSubviews()
     
   }
@@ -261,7 +270,6 @@ class ViewController: UIViewController {
       label.textAlignment = .left
     }
     
-    
     let station = spbMetro.addNewVertex(name: title, lineNumber: lineNumber)
     
     button.label = label
@@ -270,28 +278,7 @@ class ViewController: UIViewController {
     
     return station
   }
-  
-  
-  @IBAction func pinchGesture(){
-    guard let gestureView = pinchGestureRecognizer.view else { return }
 
-      gestureView.transform = gestureView.transform.scaledBy(x: pinchGestureRecognizer.scale, y: pinchGestureRecognizer.scale)
-    
-      pinchGestureRecognizer.scale = 1
-  }
-  
-  @IBAction func panGesture(){
-    guard let gestureView = panGestureRecognizer.view else { return }
-    
-    let translation = panGestureRecognizer.translation(in: gestureView.superview)
-
-    if panGestureRecognizer.state == .began {
-          self.initialCenter = gestureView.center
-       }
-    
-    let newCenter = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y + translation.y)
-    gestureView.center = newCenter
-  }
   
   @objc func stationButtonTapped(sender: StationButton!) {
     
@@ -301,22 +288,25 @@ class ViewController: UIViewController {
       largeCircle(sender: sender)
       updateRouteLabels()
       
-//    case (nil, _):
-//      if sender.station == toStation {
-//        largeCircle(sender: fromStation?.button)
-//        smallCircle(sender: sender)
-//        fromStation = toStation
-//        toStation = nil
-//      } else {
-//        fromStation = sender.station
-//        largeCircle(sender: sender)
-//      }
-//      updateRouteLabels()
+    case (nil, _):
+      if sender.station == toStation {
+        fromStation = toStation
+        toStation = nil
+      } else {
+        fromStation = sender.station
+        largeCircle(sender: sender)
+        
+        if fromStation != nil && toStation != nil {
+          DispatchQueue.global(qos: .background).async { [weak self] in
+            self?.spbMetro.findShortestPath(between: (self?.fromStation)!, and: (self?.toStation)!)
+          }
+        }
+      }
+      updateRouteLabels()
       
     case (_, nil):
       if sender.station == fromStation {
-        largeCircle(sender: sender)
-        smallCircle(sender: fromStation?.button)
+
         toStation = fromStation
         fromStation = nil
       } else {
@@ -343,7 +333,7 @@ class ViewController: UIViewController {
   
   func largeCircle(sender: UIButton!){
     let buttonCenter = sender.center
-    sender.frame.size = CGSize(width: buttonDiameter * 2, height: buttonDiameter * 2)
+    sender.frame.size = CGSize(width: buttonDiameter * 1.7, height: buttonDiameter * 1.7)
     sender.center = buttonCenter
     sender.layer.cornerRadius = sender.frame.width / 2
   }
@@ -359,13 +349,10 @@ class ViewController: UIViewController {
     fromStationLabel.text = fromStation?.name ?? "не выбрана"
     toStationLabel.text = toStation?.name ?? "не выбрана"
   }
-  
-  
 }
 
-extension Station {
-  func placeLabelToLeft(){
-    self.button.label.center = CGPoint(x: self.button.center.x - self.button.frame.width * 0.6 - self.button.label.frame.width / 2, y: button.center.y)
-    self.button.label.textAlignment = .right
+extension ViewController: UIScrollViewDelegate {
+  func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+    return mapView
   }
 }
