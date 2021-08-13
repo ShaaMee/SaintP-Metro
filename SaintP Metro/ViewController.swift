@@ -11,6 +11,8 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var showDetailsButton: UIButton!
   @IBOutlet weak var mapView: UIView!
+  @IBOutlet weak var fromStationLabel: UILabel!
+  @IBOutlet weak var toStationLabel: UILabel!
   
   var pinchGestureRecognizer = UIPinchGestureRecognizer()
   var panGestureRecognizer = UIPanGestureRecognizer()
@@ -22,8 +24,20 @@ class ViewController: UIViewController {
   
   let spbMetro = MetroGraph()
   
+  var fromStation: Station?
+  var toStation: Station?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    mapView.clipsToBounds = false
+    mapView.isUserInteractionEnabled = true
+    mapView.addGestureRecognizer(pinchGestureRecognizer)
+    mapView.addGestureRecognizer(panGestureRecognizer)
+    pinchGestureRecognizer.addTarget(self, action: #selector(pinchGesture))
+    panGestureRecognizer.addTarget(self, action: #selector(panGesture))
+    
+    showDetailsButton.layer.cornerRadius = showDetailsButton.bounds.height / 4
     
     //Line 1 stations
     let deviatkinoStation = createButtonLabelAndStationWith(title: "Девяткино", x: 231, y: 107, lineNumber: 1)
@@ -134,7 +148,6 @@ class ViewController: UIViewController {
     
     gostinyiDvorStation.button.label.center.y += buttonDiameter
     
-    
     //Line 4 stations
     let spasskaiaStation = createButtonLabelAndStationWith(title: "Спасская", x: 166, y: 330, lineNumber: 4, isLabelToLeft: true)
     let dostoevskaiaStation = createButtonLabelAndStationWith(title: "Достоевская", x: 231, y: 330, lineNumber: 4, isLabelToLeft: true)
@@ -200,11 +213,7 @@ class ViewController: UIViewController {
     spbMetro.addEdgeBetween(spasskaiaStation, and: sadovaiaStation, withWeight: 3)
     spbMetro.addEdgeBetween(spasskaiaStation, and: sennaiaStation, withWeight: 3)
     spbMetro.addEdgeBetween(sennaiaStation, and: sadovaiaStation, withWeight: 3)
-    
-    
-    mapView.clipsToBounds = false
 
-        
     for edge in spbMetro.edges {
       let edgeView = BezierLine(edge: edge, view: self.view)
       mapView.addSubview(edgeView)
@@ -213,22 +222,10 @@ class ViewController: UIViewController {
     for station in spbMetro.allVertices {
       mapView.addSubview(station.button)
     }
-    
     for station in spbMetro.allVertices {
       mapView.addSubview(station.button.label)
     }
-    
-
     mapView.layoutSubviews()
-    
-    showDetailsButton.layer.cornerRadius = showDetailsButton.bounds.height / 4
-    
-    mapView.isUserInteractionEnabled = true
-    
-    mapView.addGestureRecognizer(pinchGestureRecognizer)
-    mapView.addGestureRecognizer(panGestureRecognizer)
-    pinchGestureRecognizer.addTarget(self, action: #selector(pinchGesture))
-    panGestureRecognizer.addTarget(self, action: #selector(panGesture))
     
   }
   
@@ -247,6 +244,7 @@ class ViewController: UIViewController {
     
     let button = StationButton(frame: CGRect(x: view.layer.frame.width * x / 414, y: view.layer.frame.width  / 414 * y, width: buttonDiameter, height: buttonDiameter))
     button.backgroundColor = color
+    button.addTarget(self, action: #selector(stationButtonTapped), for: .touchUpInside)
     
     let label = UILabel()
     label.text = title
@@ -293,6 +291,69 @@ class ViewController: UIViewController {
     
     let newCenter = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y + translation.y)
     gestureView.center = newCenter
+  }
+  
+  @objc func stationButtonTapped(sender: StationButton!) {
+    
+    switch (fromStation, toStation) {
+    case (nil, nil):
+      fromStation = sender.station
+      largeCircle(sender: sender)
+      updateRouteLabels()
+      
+    case (nil, _):
+      if sender.station == toStation {
+        largeCircle(sender: fromStation?.button)
+        smallCircle(sender: sender)
+        fromStation = toStation
+        toStation = nil
+      } else {
+        fromStation = sender.station
+        largeCircle(sender: sender)
+      }
+      updateRouteLabels()
+      
+    case (_, nil):
+      if sender.station == fromStation {
+        largeCircle(sender: sender)
+        smallCircle(sender: fromStation?.button)
+        toStation = fromStation
+        fromStation = nil
+      } else {
+        toStation = sender.station
+        largeCircle(sender: sender)
+        guard let fromStation = fromStation, let toStation = toStation else { break }
+        spbMetro.findShortestPath(between: fromStation, and: toStation)
+      }
+      updateRouteLabels()
+      
+    default:
+      smallCircle(sender: fromStation?.button)
+      smallCircle(sender: toStation?.button)
+      largeCircle(sender: sender)
+      fromStation = sender.station
+      toStation = nil
+      updateRouteLabels()
+    }
+  }
+  
+  func largeCircle(sender: UIButton!){
+    let buttonCenter = sender.center
+    sender.frame.size = CGSize(width: buttonDiameter * 2, height: buttonDiameter * 2)
+    sender.center = buttonCenter
+    sender.layer.cornerRadius = sender.frame.width / 2
+  }
+  
+  func smallCircle(sender: UIButton!){
+    let buttonCenter = sender.center
+    sender.frame.size = CGSize(width: buttonDiameter, height: buttonDiameter)
+    sender.center = buttonCenter
+    sender.layer.cornerRadius = sender.frame.width / 2
+  }
+  
+  func updateRouteLabels() {
+    fromStationLabel.text = fromStation?.name ?? "не выбрана"
+    toStationLabel.text = toStation?.name ?? "не выбрана"
   }
   
   
