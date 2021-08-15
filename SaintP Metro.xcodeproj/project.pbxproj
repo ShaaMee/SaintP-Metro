@@ -19,6 +19,9 @@
 		CE40508126C5695B00466860 /* MetroGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40508026C5695B00466860 /* MetroGraph.swift */; };
 		CE40508426C57AB900466860 /* BezierLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40508326C57AB800466860 /* BezierLine.swift */; };
 		CE54F1CC26C471210049A4F5 /* StationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54F1CB26C471200049A4F5 /* StationButton.swift */; };
+		CEB7DAB926C6C03400F35D9C /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7DAB826C6C03300F35D9C /* DetailsTableViewController.swift */; };
+		CEB7DABC26C6C07000F35D9C /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7DABB26C6C07000F35D9C /* DetailsCell.swift */; };
+		CEB7DABF26C9380E00F35D9C /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7DABE26C9380D00F35D9C /* PassthroughView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		CE40508026C5695B00466860 /* MetroGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroGraph.swift; sourceTree = "<group>"; };
 		CE40508326C57AB800466860 /* BezierLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierLine.swift; sourceTree = "<group>"; };
 		CE54F1CB26C471200049A4F5 /* StationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationButton.swift; sourceTree = "<group>"; };
+		CEB7DAB826C6C03300F35D9C /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
+		CEB7DABB26C6C07000F35D9C /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
+		CEB7DABE26C9380D00F35D9C /* PassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 				CE375CC926C163B800917607 /* AppDelegate.swift */,
 				CE375CCB26C163B800917607 /* SceneDelegate.swift */,
 				CE375CCD26C163B800917607 /* ViewController.swift */,
+				CEB7DABE26C9380D00F35D9C /* PassthroughView.swift */,
+				CEB7DAB826C6C03300F35D9C /* DetailsTableViewController.swift */,
+				CEB7DABB26C6C07000F35D9C /* DetailsCell.swift */,
 				CE40508026C5695B00466860 /* MetroGraph.swift */,
 				CE40507A26C5681A00466860 /* Station.swift */,
 				CE40507D26C5686000466860 /* Edge.swift */,
@@ -158,8 +167,11 @@
 			files = (
 				CE54F1CC26C471210049A4F5 /* StationButton.swift in Sources */,
 				CE40507B26C5681A00466860 /* Station.swift in Sources */,
+				CEB7DABC26C6C07000F35D9C /* DetailsCell.swift in Sources */,
 				CE40507E26C5686000466860 /* Edge.swift in Sources */,
+				CEB7DABF26C9380E00F35D9C /* PassthroughView.swift in Sources */,
 				CE375CCE26C163B800917607 /* ViewController.swift in Sources */,
+				CEB7DAB926C6C03400F35D9C /* DetailsTableViewController.swift in Sources */,
 				CE40508426C57AB900466860 /* BezierLine.swift in Sources */,
 				CE375CCA26C163B800917607 /* AppDelegate.swift in Sources */,
 				CE375CCC26C163B800917607 /* SceneDelegate.swift in Sources */,

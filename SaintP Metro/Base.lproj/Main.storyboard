@@ -94,7 +94,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2hK-WS-Dgn" kind="show" id="JCh-oN-fKB"/>
+                                    <action selector="showDetails:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KJL-kF-Iwk"/>
+                                    <segue destination="2hK-WS-Dgn" kind="show" identifier="showRoute" id="JCh-oN-fKB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -129,16 +130,16 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Details Table View Controller-->
         <scene sceneID="HDo-dd-C56">
             <objects>
-                <tableViewController id="2hK-WS-Dgn" sceneMemberID="viewController">
+                <tableViewController id="2hK-WS-Dgn" customClass="DetailsTableViewController" customModule="SaintP_Metro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mM2-tI-4kz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1eo-BI-GGi">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailsCell" id="1eo-BI-GGi" customClass="DetailsCell" customModule="SaintP_Metro" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1eo-BI-GGi" id="CZn-vX-fw8">

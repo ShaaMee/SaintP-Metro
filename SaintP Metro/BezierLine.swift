@@ -9,13 +9,16 @@ import UIKit
 
 class BezierLine: UIView {
   var edge: Edge
-  var view: UIView
+  let path = UIBezierPath()
+  weak var view: UIView?
+  
   init(edge: Edge, view: UIView) {
     self.edge = edge
     self.view = view
     super.init(frame: .zero)
     self.frame = view.frame
     self.backgroundColor = .clear
+
   }
   
   required init?(coder: NSCoder) {
@@ -25,15 +28,12 @@ class BezierLine: UIView {
   override func draw(_ rect: CGRect) {
     guard edge.vertex1.lineNumber == edge.vertex2.lineNumber else { return }
     
-    let path = UIBezierPath()
     path.move(to: edge.vertex1.button.center)
     path.addLine(to: edge.vertex2.button.center)
-//    path.move(to: CGPoint(x: 50, y: 3))
-//    path.addLine(to: CGPoint(x: 50, y: 50))
-    
-    let color = edge.vertex1.button.backgroundColor
-    color?.setStroke()
+    let color = edge.vertex1.button.color
+    color.setStroke()
     path.lineWidth = edge.vertex1.button.bounds.width * 0.4
     path.stroke()
+    self.edge.edgeView = self
   }
 }

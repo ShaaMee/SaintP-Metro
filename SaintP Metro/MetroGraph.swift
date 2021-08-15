@@ -24,7 +24,7 @@ class MetroGraph {
     edges.append(edge)
   }
   
-  func findShortestPath(between startVertex: Station, and finishVertex: Station) {
+  func findShortestPath(between startVertex: Station, and finishVertex: Station) -> ([Station], [Edge]) {
     
     for station in allVertices {
       station.previousVertex = nil
@@ -81,5 +81,17 @@ class MetroGraph {
       }
     }
     
+    let reversedRoute = route.reversed()
+    var reversedRouteEdges = [Edge]()
+    
+    for station in reversedRoute {
+      for edge in station.edges {
+        if edge.vertex1 == station.previousVertex || edge.vertex2 == station.previousVertex {
+          reversedRouteEdges.append(edge)
+        }
+      }
+    }
+    
+    return (route, reversedRouteEdges.reversed())
   }
 }

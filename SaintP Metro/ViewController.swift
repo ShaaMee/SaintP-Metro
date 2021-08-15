@@ -15,19 +15,22 @@ class ViewController: UIViewController {
   @IBOutlet weak var fromStationLabel: UILabel!
   @IBOutlet weak var toStationLabel: UILabel!
     
-  var buttonDiameter: CGFloat {
+  private var buttonDiameter: CGFloat {
     let side = min(self.view.layer.frame.width, self.view.layer.frame.height)
     return side / 40
   }
   
   let spbMetro = MetroGraph()
+
+  private var route = [Station]()
+  private var routeEdges = [Edge]()
   
-  var fromStation: Station?
-  var toStation: Station?
+  private var fromStation: Station?
+  private var toStation: Station?
+  var overlayView: UIView?
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     scrollView.delegate = self
     scrollView.decelerationRate = .fast
     scrollView.showsVerticalScrollIndicator = false
@@ -45,6 +48,7 @@ class ViewController: UIViewController {
     scrollView.maximumZoomScale = 3
     
     showDetailsButton.layer.cornerRadius = showDetailsButton.bounds.height / 4
+    showDetailsButton.isHidden = true
     
     //Line 1 stations
     let deviatkinoStation = createButtonLabelAndStationWith(title: "Девяткино", x: 231, y: 107, lineNumber: 1)
@@ -230,12 +234,10 @@ class ViewController: UIViewController {
     for station in spbMetro.allVertices {
       mapView.addSubview(station.button)
     }
+    
     for station in spbMetro.allVertices {
       mapView.addSubview(station.button.label)
     }
-  
-    mapView.layoutSubviews()
-    
   }
   
   func createButtonLabelAndStationWith(title: String, x: CGFloat, y: CGFloat, lineNumber: Int, isLabelToLeft: Bool? = nil) -> Station {
@@ -252,7 +254,7 @@ class ViewController: UIViewController {
     }
     
     let button = StationButton(frame: CGRect(x: view.layer.frame.width * x / 414, y: view.layer.frame.width  / 414 * y, width: buttonDiameter, height: buttonDiameter))
-    button.backgroundColor = color
+    button.color = color
     button.addTarget(self, action: #selector(stationButtonTapped), for: .touchUpInside)
     
     let label = UILabel()
@@ -284,72 +286,107 @@ class ViewController: UIViewController {
     
     switch (fromStation, toStation) {
     case (nil, nil):
+      showDetailsButton.isHidden = true
       fromStation = sender.station
-      largeCircle(sender: sender)
+      sender.largeCircle()
       updateRouteLabels()
       
     case (nil, _):
       if sender.station == toStation {
+        showDetailsButton.isHidden = true
         fromStation = toStation
         toStation = nil
       } else {
         fromStation = sender.station
-        largeCircle(sender: sender)
-        
+        sender.largeCircle()
+
         if fromStation != nil && toStation != nil {
-          DispatchQueue.global(qos: .background).async { [weak self] in
-            self?.spbMetro.findShortestPath(between: (self?.fromStation)!, and: (self?.toStation)!)
-          }
+          calculatePath()
+          showDetailsButton.isHidden = false
         }
       }
       updateRouteLabels()
       
     case (_, nil):
       if sender.station == fromStation {
-
+        showDetailsButton.isHidden = true
         toStation = fromStation
         fromStation = nil
       } else {
         toStation = sender.station
-        largeCircle(sender: sender)
-        
+        sender.largeCircle()
+
         if fromStation != nil && toStation != nil {
-          DispatchQueue.global(qos: .background).async { [weak self] in
-            self?.spbMetro.findShortestPath(between: (self?.fromStation)!, and: (self?.toStation)!)
-          }
+          calculatePath()
+          showDetailsButton.isHidden = false
         }
       }
       updateRouteLabels()
       
     default:
-      smallCircle(sender: fromStation?.button)
-      smallCircle(sender: toStation?.button)
-      largeCircle(sender: sender)
+      guard let overlayView = overlayView else { return }
+      overlayView.removeFromSuperview()
+      
+      showDetailsButton.isHidden = true
+      fromStation?.button.smallCircle(buttonDiameter: buttonDiameter)
+      toStation?.button.smallCircle(buttonDiameter: buttonDiameter)
+      sender.largeCircle()
       fromStation = sender.station
       toStation = nil
       updateRouteLabels()
     }
   }
   
-  func largeCircle(sender: UIButton!){
-    let buttonCenter = sender.center
-    sender.frame.size = CGSize(width: buttonDiameter * 1.7, height: buttonDiameter * 1.7)
-    sender.center = buttonCenter
-    sender.layer.cornerRadius = sender.frame.width / 2
-  }
-  
-  func smallCircle(sender: UIButton!){
-    let buttonCenter = sender.center
-    sender.frame.size = CGSize(width: buttonDiameter, height: buttonDiameter)
-    sender.center = buttonCenter
-    sender.layer.cornerRadius = sender.frame.width / 2
-  }
-  
   func updateRouteLabels() {
     fromStationLabel.text = fromStation?.name ?? "не выбрана"
     toStationLabel.text = toStation?.name ?? "не выбрана"
   }
+  
+  func calculatePath(){
+    DispatchQueue.global(qos: .background).async { [weak self] in
+      let result = self?.spbMetro.findShortestPath(between: (self?.fromStation)!, and: (self?.toStation)!) ?? ([],[])
+      self?.route = result.0
+      self?.routeEdges = result.1
+      DispatchQueue.main.async { [weak self] in
+        self?.drawRoute()
+      }
+    }
+  }
+  
+  func drawRoute(){
+    overlayView = PassthroughView(frame: mapView.frame)
+    guard let overlayView = overlayView else { return }
+    
+    overlayView.backgroundColor = .white
+    overlayView.layer.opacity = 0.8
+    overlayView.isUserInteractionEnabled = true
+    mapView.addSubview(overlayView)
+    
+    for edge in routeEdges {
+      if let edgeView = edge.edgeView {
+        edgeView.isUserInteractionEnabled = false
+        mapView.addSubview(edgeView)
+      }
+    }
+    
+    for station in route {
+      mapView.addSubview(station.button)
+      mapView.addSubview(station.button.label)
+    }
+  }
+  
+  @IBAction func showDetails(_ sender: UIButton) {
+    performSegue(withIdentifier: "showRoute", sender: sender)
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard segue.identifier == "showRoute" else { return }
+    guard let destinationVC = segue.destination as? DetailsTableViewController else { return }
+    destinationVC.route = self.route
+  }
 }
+
+
 
 extension ViewController: UIScrollViewDelegate {
   func viewForZooming(in scrollView: UIScrollView) -> UIView? {
