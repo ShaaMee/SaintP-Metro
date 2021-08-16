@@ -255,6 +255,7 @@ class ViewController: UIViewController {
     
     let button = StationButton(frame: CGRect(x: view.layer.frame.width * x / 414, y: view.layer.frame.width  / 414 * y, width: buttonDiameter, height: buttonDiameter))
     button.color = color
+    button.buttonDiameter = buttonDiameter
     button.addTarget(self, action: #selector(stationButtonTapped), for: .touchUpInside)
     
     let label = UILabel()

@@ -14,6 +14,7 @@ class StationButton: UIButton {
   weak var station: Station?
   var color: UIColor = .clear
   var smallCircleView: UIView?
+  var buttonDiameter: CGFloat = 0
   var centerPoint: CGPoint {
     CGPoint(x: self.bounds.width / 2, y: self.bounds.height / 2)
   }

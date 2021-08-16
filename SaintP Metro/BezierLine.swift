@@ -32,7 +32,7 @@ class BezierLine: UIView {
     path.addLine(to: edge.vertex2.button.center)
     let color = edge.vertex1.button.color
     color.setStroke()
-    path.lineWidth = edge.vertex1.button.bounds.width * 0.4
+    path.lineWidth = edge.vertex1.button.buttonDiameter * 0.4
     path.stroke()
     self.edge.edgeView = self
   }
