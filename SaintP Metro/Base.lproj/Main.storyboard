@@ -141,12 +141,23 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Маршрут" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSb-Ai-Q6y">
-                                    <rect key="frame" x="168.5" y="40.5" width="77" height="19"/>
-                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="60N-7n-tE6">
+                                    <rect key="frame" x="20" y="26.5" width="374" height="47"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Подробный маршрут" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojN-Rl-gjh">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="25.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="21"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Подробный маршрут" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSb-Ai-Q6y">
+                                            <rect key="frame" x="0.0" y="25.5" width="374" height="21.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <viewLayoutGuide key="safeArea" id="bih-b6-eUE"/>
                             <color key="backgroundColor" red="0.92690208819435815" green="0.92776851550831152" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
@@ -154,10 +165,9 @@
                                 <accessibilityTraits key="traits" header="YES"/>
                             </accessibility>
                             <constraints>
-                                <constraint firstItem="bih-b6-eUE" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FSb-Ai-Q6y" secondAttribute="trailing" constant="10" id="3EK-qT-Ij6"/>
-                                <constraint firstItem="FSb-Ai-Q6y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bih-b6-eUE" secondAttribute="leading" constant="10" id="LHZ-Pg-Pxy"/>
-                                <constraint firstItem="FSb-Ai-Q6y" firstAttribute="centerX" secondItem="Ktg-zK-yft" secondAttribute="centerX" id="NG8-06-TMJ"/>
-                                <constraint firstItem="FSb-Ai-Q6y" firstAttribute="centerY" secondItem="Ktg-zK-yft" secondAttribute="centerY" id="oIJ-bE-LSY"/>
+                                <constraint firstItem="60N-7n-tE6" firstAttribute="leading" secondItem="bih-b6-eUE" secondAttribute="leading" constant="20" id="0cY-NX-MBh"/>
+                                <constraint firstItem="bih-b6-eUE" firstAttribute="trailing" secondItem="60N-7n-tE6" secondAttribute="trailing" constant="20" id="Nf3-aj-DTI"/>
+                                <constraint firstItem="60N-7n-tE6" firstAttribute="centerY" secondItem="Ktg-zK-yft" secondAttribute="centerY" id="hzD-jR-8iC"/>
                             </constraints>
                             <connections>
                                 <outlet property="titleLabel" destination="FSb-Ai-Q6y" id="51n-35-K2f"/>
@@ -229,7 +239,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAl-7h-3V2">
                                                     <rect key="frame" x="0.0" y="22.5" width="261" height="20.5"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

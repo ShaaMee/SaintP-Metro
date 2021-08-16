@@ -10,13 +10,40 @@ import UIKit
 class DetailsTableViewController: UITableViewController {
   var route = [Station]()
   var routeEdges = [Edge]()
+  
+  var numberOfTransfers: Int {
+    var counter = 0
+    guard !route.isEmpty else { return 0 }
+    for (index, station) in route.enumerated() {
+      guard route.indices.contains(index + 1) else { return counter }
+      if station.button.color != route[index + 1].button.color {
+        counter += 1
+      }
+    }
+    return counter
+  }
+  
+  var transfersText: String {
+    let strNumberOfTransfers = String(numberOfTransfers)
+    switch strNumberOfTransfers.last {
+    case "1": return "\(numberOfTransfers) пересадка"
+    case "2", "3", "4": return "\(numberOfTransfers) пересадки"
+    case "0": if numberOfTransfers == 0 {
+      return "Без пересадок"
+    } else { return "\(numberOfTransfers) пересадок"}
+    default: return "\(numberOfTransfers) пересадок"
+    }
+  }
+  
   @IBOutlet weak var headerView: TableHeaderView!
   
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      
       headerView.layer.cornerRadius = 10
       if !route.isEmpty {
-        headerView.titleLabel.text = "Маршрут \(route.first!.name) -> \(route.last!.name)\nВремя в пути: \(route.last!.shortestDistanceFromStart) мин."
+        headerView.titleLabel.text = "\(route.last!.shortestDistanceFromStart) мин.  \(transfersText)"
       }
       
     }
