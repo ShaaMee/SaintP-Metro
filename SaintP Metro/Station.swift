@@ -9,7 +9,10 @@ import Foundation
 import  UIKit
 
 class Station: Hashable {
-  var name: String
+  var labelText: String
+  var name: String {
+    labelText.replacingOccurrences(of: "\n", with: " ")
+  }
   var lineNumber: Int
   var edges: [Edge] = []
   var button = StationButton()
@@ -17,15 +20,15 @@ class Station: Hashable {
   var previousVertex: Station?
   
   init(name: String, lineNumber: Int) {
-    self.name = name
+    self.labelText = name
     self.lineNumber = lineNumber
   }
   
   static func == (lhs: Station, rhs: Station) -> Bool {
-    return lhs.name == rhs.name
+    return lhs.labelText == rhs.labelText
   }
   
   func hash(into hasher: inout Hasher) {
-    hasher.combine(name)
+    hasher.combine(labelText)
   }
 }

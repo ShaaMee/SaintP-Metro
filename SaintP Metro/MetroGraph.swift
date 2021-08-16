@@ -39,7 +39,7 @@ class MetroGraph {
       for edge in currentVertex.edges {
         for edgeVertex in [edge.vertex1, edge.vertex2] {
           
-          if edgeVertex.name != currentVertex.name && unvisitedVertices.contains(edgeVertex) {
+          if edgeVertex.labelText != currentVertex.labelText && unvisitedVertices.contains(edgeVertex) {
             if edgeVertex.shortestDistanceFromStart > currentVertex.shortestDistanceFromStart + edge.weight {
               edgeVertex.shortestDistanceFromStart = currentVertex.shortestDistanceFromStart + edge.weight
               edgeVertex.previousVertex = currentVertex
@@ -67,19 +67,19 @@ class MetroGraph {
       prevVertex = prevVertex?.previousVertex
     }
     
-    if finishVertex.shortestDistanceFromStart == Int.max {
-      print("Can't build a route between \(startVertex.name) and \(finishVertex.name).")
-    } else {
-      print("The fastest route from \(startVertex.name) to \(finishVertex.name) is \(finishVertex.shortestDistanceFromStart) minutes long: ", terminator: "")
-      
-      for i in route {
-        print(i.name, terminator: "")
-        
-        if i.name != finishVertex.name {
-          print(" -> ", terminator: "")
-        } else { print("") }
-      }
-    }
+//    if finishVertex.shortestDistanceFromStart == Int.max {
+//      print("Can't build a route between \(startVertex.name) and \(finishVertex.name).")
+//    } else {
+//      print("The fastest route from \(startVertex.name) to \(finishVertex.name) is \(finishVertex.shortestDistanceFromStart) minutes long: ", terminator: "")
+//
+//      for i in route {
+//        print(i.name, terminator: "")
+//
+//        if i.name != finishVertex.name {
+//          print(" -> ", terminator: "")
+//        } else { print("") }
+//      }
+//    }
     
     let reversedRoute = route.reversed()
     var reversedRouteEdges = [Edge]()

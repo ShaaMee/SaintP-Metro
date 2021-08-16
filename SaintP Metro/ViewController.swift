@@ -354,7 +354,7 @@ class ViewController: UIViewController {
   }
   
   func drawRoute(){
-    overlayView = PassthroughView(frame: mapView.frame)
+    overlayView = PassthroughView(frame: scrollView.frame)
     guard let overlayView = overlayView else { return }
     
     overlayView.backgroundColor = .white
@@ -383,6 +383,7 @@ class ViewController: UIViewController {
     guard segue.identifier == "showRoute" else { return }
     guard let destinationVC = segue.destination as? DetailsTableViewController else { return }
     destinationVC.route = self.route
+    destinationVC.routeEdges = self.routeEdges
   }
 }
 
