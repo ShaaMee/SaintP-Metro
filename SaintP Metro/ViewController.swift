@@ -12,9 +12,9 @@ class ViewController: UIViewController {
   @IBOutlet weak var showDetailsButton: UIButton!
   @IBOutlet weak var mapView: UIView!
   @IBOutlet weak var scrollView: UIScrollView!
-  @IBOutlet weak var fromStationLabel: UILabel!
-  @IBOutlet weak var toStationLabel: UILabel!
-    
+  @IBOutlet weak var fromStationButton: UIButton!
+  @IBOutlet weak var toStationButton: UIButton!
+  
   private var buttonDiameter: CGFloat {
     let side = min(self.view.layer.frame.width, self.view.layer.frame.height)
     return side / 40
@@ -31,6 +31,7 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     scrollView.delegate = self
     scrollView.decelerationRate = .fast
     scrollView.showsVerticalScrollIndicator = false
@@ -47,8 +48,16 @@ class ViewController: UIViewController {
     scrollView.minimumZoomScale = minScale
     scrollView.maximumZoomScale = 3
     
+    
+    toStationButton.layer.cornerRadius = fromStationButton.frame.size.height / 4
     showDetailsButton.layer.cornerRadius = showDetailsButton.bounds.height / 4
     showDetailsButton.isHidden = true
+    
+    for button in [fromStationButton, toStationButton] {
+      button?.layer.cornerRadius = fromStationButton.frame.size.height / 4
+      button?.layer.borderWidth = 1
+      button?.layer.borderColor = UIColor.darkGray.cgColor
+    }
     
     //Line 1 stations
     let deviatkinoStation = createButtonLabelAndStationWith(title: "Девяткино", x: 231, y: 107, lineNumber: 1)
@@ -283,43 +292,41 @@ class ViewController: UIViewController {
   }
 
   
-  @objc func stationButtonTapped(sender: StationButton!) {
+  @objc func stationButtonTapped(sender: StationButton?) {
     
     switch (fromStation, toStation) {
     case (nil, nil):
       showDetailsButton.isHidden = true
-      fromStation = sender.station
-      sender.largeCircle()
+      fromStation = sender?.station
+      sender?.largeCircle()
       updateRouteLabels()
       
     case (nil, _):
-      if sender.station == toStation {
+      if sender?.station == toStation {
         showDetailsButton.isHidden = true
         fromStation = toStation
         toStation = nil
       } else {
-        fromStation = sender.station
-        sender.largeCircle()
+        fromStation = sender?.station
+        sender?.largeCircle()
 
         if fromStation != nil && toStation != nil {
           calculatePath()
-          showDetailsButton.isHidden = false
         }
       }
       updateRouteLabels()
       
     case (_, nil):
-      if sender.station == fromStation {
+      if sender?.station == fromStation {
         showDetailsButton.isHidden = true
         toStation = fromStation
         fromStation = nil
       } else {
-        toStation = sender.station
-        sender.largeCircle()
+        toStation = sender?.station
+        sender?.largeCircle()
 
         if fromStation != nil && toStation != nil {
           calculatePath()
-          showDetailsButton.isHidden = false
         }
       }
       updateRouteLabels()
@@ -331,16 +338,34 @@ class ViewController: UIViewController {
       showDetailsButton.isHidden = true
       fromStation?.button.smallCircle(buttonDiameter: buttonDiameter)
       toStation?.button.smallCircle(buttonDiameter: buttonDiameter)
-      sender.largeCircle()
-      fromStation = sender.station
+      sender?.largeCircle()
+      fromStation = sender?.station
       toStation = nil
       updateRouteLabels()
     }
   }
   
   func updateRouteLabels() {
-    fromStationLabel.text = fromStation?.name ?? "не выбрана"
-    toStationLabel.text = toStation?.name ?? "не выбрана"
+    
+    if fromStation != nil {
+      fromStationButton.setTitle(fromStation?.name, for: .normal)
+      fromStationButton.tintColor = fromStation?.button.color
+      fromStationButton.setTitleColor(.black, for: .normal)
+    } else {
+      fromStationButton.setTitle("Откуда", for: .normal)
+      fromStationButton.tintColor = .darkGray
+      fromStationButton.setTitleColor(.darkGray, for: .normal)
+    }
+    
+    if toStation != nil {
+      toStationButton.setTitle(toStation?.name, for: .normal)
+      toStationButton.tintColor = toStation?.button.color
+      toStationButton.setTitleColor(.black, for: .normal)
+    } else {
+      toStationButton.setTitle("Куда", for: .normal)
+      toStationButton.tintColor = .darkGray
+      toStationButton.setTitleColor(.darkGray, for: .normal)
+    }
   }
   
   func calculatePath(){
@@ -350,12 +375,18 @@ class ViewController: UIViewController {
       self?.routeEdges = result.1
       DispatchQueue.main.async { [weak self] in
         self?.drawRoute()
+        self?.showDetailsButton.isHidden = false
+
       }
     }
   }
   
   func drawRoute(){
-    overlayView = PassthroughView(frame: scrollView.frame)
+    if overlayView != nil {
+      overlayView?.removeFromSuperview()
+    }
+    
+    overlayView = PassthroughView(frame: CGRect(x: -25, y: -25, width: view.frame.size.width + 50, height: view.frame.size.height + 50))
     guard let overlayView = overlayView else { return }
     
     overlayView.backgroundColor = .white
@@ -379,6 +410,16 @@ class ViewController: UIViewController {
   @IBAction func showDetails(_ sender: UIButton) {
     performSegue(withIdentifier: "showRoute", sender: sender)
   }
+  
+  @IBAction func switchStations(_ sender: UIButton) {
+    swap(&fromStation, &toStation)
+    updateRouteLabels()
+    
+    if fromStation != nil && toStation != nil {
+      calculatePath()
+    }
+  }
+  
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard segue.identifier == "showRoute" else { return }

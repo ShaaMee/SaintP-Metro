@@ -11,7 +11,7 @@ class DetailsTableViewController: UITableViewController {
   var route = [Station]()
   var routeEdges = [Edge]()
   
-  var numberOfTransfers: Int {
+  private var numberOfTransfers: Int {
     var counter = 0
     guard !route.isEmpty else { return 0 }
     for (index, station) in route.enumerated() {
@@ -23,7 +23,7 @@ class DetailsTableViewController: UITableViewController {
     return counter
   }
   
-  var transfersText: String {
+  private var transfersText: String {
     let strNumberOfTransfers = String(numberOfTransfers)
     switch strNumberOfTransfers.last {
     case "1": return "\(numberOfTransfers) пересадка"
@@ -80,5 +80,4 @@ class DetailsTableViewController: UITableViewController {
 
         return cell
     }
-
 }
