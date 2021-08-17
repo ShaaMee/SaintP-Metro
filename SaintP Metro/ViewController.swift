@@ -468,9 +468,11 @@ extension ViewController: UIScrollViewDelegate {
 extension ViewController: SearchStationTableViewDelegate {
   func receiveSearchResult(station: Station, button: UIButton){
     if fromStation != nil && button == fromStationButton {
+      fromStation?.button.smallCircle(buttonDiameter: buttonDiameter)
         fromStation = nil
         stationButtonTapped(sender: station.button)
     } else if toStationButton != nil && button == toStationButton {
+      toStation?.button.smallCircle(buttonDiameter: buttonDiameter)
         toStation = nil
         stationButtonTapped(sender: station.button)
     } else {
