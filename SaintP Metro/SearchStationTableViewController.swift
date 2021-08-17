@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 protocol SearchStationTableViewDelegate: class {
-  func receiveSearchResult(station: Station)
+  func receiveSearchResult(station: Station, button: UIButton)
 }
 
 class SearchStationTableViewController: UITableViewController {
@@ -19,12 +19,14 @@ class SearchStationTableViewController: UITableViewController {
   
   var allStations = [Station]()
   var searchResult = [Station]()
+  var buttonTapped: UIButton?
   weak var delegate: SearchStationTableViewDelegate?
   let bag = DisposeBag()
   
     override func viewDidLoad() {
         super.viewDidLoad()
       tableView.dataSource = nil
+      searchTextField.becomeFirstResponder()
       
       let search = searchTextField.rx.text.orEmpty
         .flatMapLatest { [weak self] searchLine -> Observable<[Station]> in
@@ -48,7 +50,8 @@ class SearchStationTableViewController: UITableViewController {
   
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    delegate?.receiveSearchResult(station: searchResult[indexPath.row])
+    guard let buttonTapped = buttonTapped else { return }
+    delegate?.receiveSearchResult(station: searchResult[indexPath.row], button: buttonTapped)
     self.dismiss(animated: true, completion: nil)
   }
 }

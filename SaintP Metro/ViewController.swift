@@ -294,7 +294,7 @@ class ViewController: UIViewController {
   }
 
   
-  @objc func stationButtonTapped(sender: StationButton?) {
+  @objc func stationButtonTapped(sender: StationButton?, isFromSearch: Bool = false) {
     
     switch (fromStation, toStation) {
     case (nil, nil):
@@ -452,6 +452,7 @@ class ViewController: UIViewController {
         allStations.append(station)
       }
       destinationVC.allStations = allStations.sorted{ $0.name < $1.name }
+      destinationVC.buttonTapped = sender as? UIButton
       destinationVC.delegate = self
     }
     
@@ -465,7 +466,15 @@ extension ViewController: UIScrollViewDelegate {
 }
 
 extension ViewController: SearchStationTableViewDelegate {
-  func receiveSearchResult(station: Station){
-    stationButtonTapped(sender: station.button)
+  func receiveSearchResult(station: Station, button: UIButton){
+    if fromStation != nil && button == fromStationButton {
+        fromStation = nil
+        stationButtonTapped(sender: station.button)
+    } else if toStationButton != nil && button == toStationButton {
+        toStation = nil
+        stationButtonTapped(sender: station.button)
+    } else {
+      stationButtonTapped(sender: station.button)
+    }
   }
 }
