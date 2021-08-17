@@ -452,6 +452,7 @@ class ViewController: UIViewController {
         allStations.append(station)
       }
       destinationVC.allStations = allStations.sorted{ $0.name < $1.name }
+      destinationVC.delegate = self
     }
     
   }
@@ -460,5 +461,11 @@ class ViewController: UIViewController {
 extension ViewController: UIScrollViewDelegate {
   func viewForZooming(in scrollView: UIScrollView) -> UIView? {
     return mapView
+  }
+}
+
+extension ViewController: SearchStationTableViewDelegate {
+  func receiveSearchResult(station: Station){
+    stationButtonTapped(sender: station.button)
   }
 }
