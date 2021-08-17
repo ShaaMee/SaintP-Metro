@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E71F7CAE67807B58983B4EF /* Pods_SaintP_Metro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23481C64FB84F4C5BDE6B66 /* Pods_SaintP_Metro.framework */; };
 		CE375CCA26C163B800917607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE375CC926C163B800917607 /* AppDelegate.swift */; };
 		CE375CCC26C163B800917607 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE375CCB26C163B800917607 /* SceneDelegate.swift */; };
 		CE375CCE26C163B800917607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE375CCD26C163B800917607 /* ViewController.swift */; };
@@ -23,9 +24,15 @@
 		CEB7DABC26C6C07000F35D9C /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7DABB26C6C07000F35D9C /* DetailsCell.swift */; };
 		CEB7DABF26C9380E00F35D9C /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7DABE26C9380D00F35D9C /* PassthroughView.swift */; };
 		CEB7DACA26CA6F0A00F35D9C /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7DAC926CA6F0A00F35D9C /* TableHeaderView.swift */; };
+		CEB7DAD126CBA61A00F35D9C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CEB7DAD026CBA61A00F35D9C /* Podfile */; };
+		CEE234E026CBA7950026FB5E /* SearchStationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE234DF26CBA7950026FB5E /* SearchStationTableViewController.swift */; };
+		CEE234E426CBA7CA0026FB5E /* SearchStationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE234E326CBA7CA0026FB5E /* SearchStationTableViewCell.swift */; };
+		CEE234E726CBA80F0026FB5E /* SearchStationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE234E626CBA80F0026FB5E /* SearchStationHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58A3999C8A3D78F7E5C431F9 /* Pods-SaintP Metro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaintP Metro.debug.xcconfig"; path = "Target Support Files/Pods-SaintP Metro/Pods-SaintP Metro.debug.xcconfig"; sourceTree = "<group>"; };
+		65590B5DBD7AFE6575CA5CAF /* Pods-SaintP Metro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaintP Metro.release.xcconfig"; path = "Target Support Files/Pods-SaintP Metro/Pods-SaintP Metro.release.xcconfig"; sourceTree = "<group>"; };
 		CE375CC626C163B800917607 /* SaintP Metro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SaintP Metro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE375CC926C163B800917607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE375CCB26C163B800917607 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +51,11 @@
 		CEB7DABB26C6C07000F35D9C /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		CEB7DABE26C9380D00F35D9C /* PassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
 		CEB7DAC926CA6F0A00F35D9C /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
+		CEB7DAD026CBA61A00F35D9C /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		CEE234DF26CBA7950026FB5E /* SearchStationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStationTableViewController.swift; sourceTree = "<group>"; };
+		CEE234E326CBA7CA0026FB5E /* SearchStationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStationTableViewCell.swift; sourceTree = "<group>"; };
+		CEE234E626CBA80F0026FB5E /* SearchStationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStationHeaderView.swift; sourceTree = "<group>"; };
+		D23481C64FB84F4C5BDE6B66 /* Pods_SaintP_Metro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaintP_Metro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,18 +63,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E71F7CAE67807B58983B4EF /* Pods_SaintP_Metro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E130E6974ACBCF9A603E8E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58A3999C8A3D78F7E5C431F9 /* Pods-SaintP Metro.debug.xcconfig */,
+				65590B5DBD7AFE6575CA5CAF /* Pods-SaintP Metro.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7C29A71F131292C298837808 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D23481C64FB84F4C5BDE6B66 /* Pods_SaintP_Metro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE375CBD26C163B800917607 = {
 			isa = PBXGroup;
 			children = (
+				CEB7DAD026CBA61A00F35D9C /* Podfile */,
 				CE375CDE26C164B300917607 /* .gitignore */,
 				CE375CC826C163B800917607 /* SaintP Metro */,
 				CE375CC726C163B800917607 /* Products */,
+				5E130E6974ACBCF9A603E8E0 /* Pods */,
+				7C29A71F131292C298837808 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,12 +117,15 @@
 				CEB7DAB826C6C03300F35D9C /* DetailsTableViewController.swift */,
 				CEB7DAC926CA6F0A00F35D9C /* TableHeaderView.swift */,
 				CEB7DABB26C6C07000F35D9C /* DetailsCell.swift */,
+				CEE234DF26CBA7950026FB5E /* SearchStationTableViewController.swift */,
+				CEE234E326CBA7CA0026FB5E /* SearchStationTableViewCell.swift */,
+				CEE234E626CBA80F0026FB5E /* SearchStationHeaderView.swift */,
+				CE375CCF26C163B800917607 /* Main.storyboard */,
 				CE40508026C5695B00466860 /* MetroGraph.swift */,
 				CE40507A26C5681A00466860 /* Station.swift */,
 				CE40507D26C5686000466860 /* Edge.swift */,
 				CE40508326C57AB800466860 /* BezierLine.swift */,
 				CE54F1CB26C471200049A4F5 /* StationButton.swift */,
-				CE375CCF26C163B800917607 /* Main.storyboard */,
 				CE375CD226C163BC00917607 /* Assets.xcassets */,
 				CE375CD426C163BC00917607 /* LaunchScreen.storyboard */,
 				CE375CD726C163BC00917607 /* Info.plist */,
@@ -104,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE375CDA26C163BC00917607 /* Build configuration list for PBXNativeTarget "SaintP Metro" */;
 			buildPhases = (
+				F828B391E1DBBD8C17E32C97 /* [CP] Check Pods Manifest.lock */,
 				CE375CC226C163B800917607 /* Sources */,
 				CE375CC326C163B800917607 /* Frameworks */,
 				CE375CC426C163B800917607 /* Resources */,
+				8C502A945DA75EB649B717E2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB7DAD126CBA61A00F35D9C /* Podfile in Resources */,
 				CE375CDF26C164B300917607 /* .gitignore in Resources */,
 				CE375CD626C163BC00917607 /* LaunchScreen.storyboard in Resources */,
 				CE375CD326C163BC00917607 /* Assets.xcassets in Resources */,
@@ -163,6 +202,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8C502A945DA75EB649B717E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SaintP Metro/Pods-SaintP Metro-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SaintP Metro/Pods-SaintP Metro-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SaintP Metro/Pods-SaintP Metro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F828B391E1DBBD8C17E32C97 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SaintP Metro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE375CC226C163B800917607 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -170,7 +251,9 @@
 			files = (
 				CEB7DACA26CA6F0A00F35D9C /* TableHeaderView.swift in Sources */,
 				CE54F1CC26C471210049A4F5 /* StationButton.swift in Sources */,
+				CEE234E026CBA7950026FB5E /* SearchStationTableViewController.swift in Sources */,
 				CE40507B26C5681A00466860 /* Station.swift in Sources */,
+				CEE234E426CBA7CA0026FB5E /* SearchStationTableViewCell.swift in Sources */,
 				CEB7DABC26C6C07000F35D9C /* DetailsCell.swift in Sources */,
 				CE40507E26C5686000466860 /* Edge.swift in Sources */,
 				CEB7DABF26C9380E00F35D9C /* PassthroughView.swift in Sources */,
@@ -179,6 +262,7 @@
 				CE40508426C57AB900466860 /* BezierLine.swift in Sources */,
 				CE375CCA26C163B800917607 /* AppDelegate.swift in Sources */,
 				CE375CCC26C163B800917607 /* SceneDelegate.swift in Sources */,
+				CEE234E726CBA80F0026FB5E /* SearchStationHeaderView.swift in Sources */,
 				CE40508126C5695B00466860 /* MetroGraph.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,12 +407,14 @@
 		};
 		CE375CDB26C163BC00917607 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58A3999C8A3D78F7E5C431F9 /* Pods-SaintP Metro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5JFF3U9J3C;
 				INFOPLIST_FILE = "SaintP Metro/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -342,12 +428,14 @@
 		};
 		CE375CDC26C163BC00917607 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65590B5DBD7AFE6575CA5CAF /* Pods-SaintP Metro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5JFF3U9J3C;
 				INFOPLIST_FILE = "SaintP Metro/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

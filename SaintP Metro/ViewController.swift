@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
   
   @IBOutlet weak var showDetailsButton: UIButton!
+  @IBOutlet weak var resetRouteButton: UIButton!
   @IBOutlet weak var mapView: UIView!
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var fromStationButton: UIButton!
@@ -52,6 +53,7 @@ class ViewController: UIViewController {
     toStationButton.layer.cornerRadius = fromStationButton.frame.size.height / 4
     showDetailsButton.layer.cornerRadius = showDetailsButton.bounds.height / 4
     showDetailsButton.isHidden = true
+    resetRouteButton.layer.cornerRadius = showDetailsButton.layer.cornerRadius
     
     for button in [fromStationButton, toStationButton] {
       button?.layer.cornerRadius = fromStationButton.frame.size.height / 4
@@ -411,6 +413,16 @@ class ViewController: UIViewController {
     performSegue(withIdentifier: "showRoute", sender: sender)
   }
   
+  @IBAction func resetRoute(_ sender: UIButton) {
+    overlayView?.removeFromSuperview()
+    fromStation?.button.smallCircle(buttonDiameter: buttonDiameter)
+    toStation?.button.smallCircle(buttonDiameter: buttonDiameter)
+    fromStation = nil
+    toStation = nil
+    updateRouteLabels()
+    showDetailsButton.isHidden = true
+  }
+  
   @IBAction func switchStations(_ sender: UIButton) {
     swap(&fromStation, &toStation)
     updateRouteLabels()
@@ -420,16 +432,30 @@ class ViewController: UIViewController {
     }
   }
   
+  @IBAction func searchForStation(_ sender: UIButton) {
+    performSegue(withIdentifier: "showSearchView", sender: sender)
+  }
+  
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    guard segue.identifier == "showRoute" else { return }
-    guard let destinationVC = segue.destination as? DetailsTableViewController else { return }
-    destinationVC.route = self.route
-    destinationVC.routeEdges = self.routeEdges
+    
+    if segue.identifier == "showRoute"{
+      guard let destinationVC = segue.destination as? DetailsTableViewController else { return }
+      destinationVC.route = self.route
+      destinationVC.routeEdges = self.routeEdges
+    }
+    
+    if segue.identifier == "showSearchView" {
+      guard let destinationVC = segue.destination as? SearchStationTableViewController else { return }
+      var allStations = [Station]()
+      spbMetro.allVertices.forEach { station in
+        allStations.append(station)
+      }
+      destinationVC.allStations = allStations.sorted{ $0.name < $1.name }
+    }
+    
   }
 }
-
-
 
 extension ViewController: UIScrollViewDelegate {
   func viewForZooming(in scrollView: UIScrollView) -> UIView? {
