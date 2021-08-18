@@ -1,0 +1,6 @@
+framework module Pods_SaintP_Metro {
+  umbrella header "Pods-SaintP Metro-umbrella.h"
+
+  export *
+  module * { export * }
+}
