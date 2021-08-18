@@ -124,7 +124,6 @@
 				CEE234DF26CBA7950026FB5E /* SearchStationTableViewController.swift */,
 				CEE234E326CBA7CA0026FB5E /* SearchStationTableViewCell.swift */,
 				CEB0896626CD3C04000F3029 /* SearchStationHeaderView.swift */,
-				CEB0895B26CD2FB9000F3029 /* StationsCreator.swift */,
 				CE375CCF26C163B800917607 /* Main.storyboard */,
 				CEB0895F26CD36CD000F3029 /* Model */,
 				CEB0896426CD379B000F3029 /* Helper */,
@@ -148,6 +147,7 @@
 		CEB0896426CD379B000F3029 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				CEB0895B26CD2FB9000F3029 /* StationsCreator.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";

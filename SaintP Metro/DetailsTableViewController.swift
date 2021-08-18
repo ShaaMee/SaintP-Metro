@@ -19,9 +19,9 @@ class DetailsTableViewController: UITableViewController {
       super.viewDidLoad()
       
       headerView.layer.cornerRadius = 10
-      if !route.isEmpty {
-        headerView.titleLabel.text = "\(route.last!.shortestDistanceFromStart) мин.  \(transfersText)"
-      }
+      
+      guard let time = route.last?.shortestDistanceFromStart else { return }
+        headerView.titleLabel.text = "\(time) мин.  \(transfersText)"
     }
 
     // MARK: - Table view data source

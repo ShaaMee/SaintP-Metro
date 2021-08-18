@@ -24,8 +24,8 @@ class StationButton: UIButton {
     self.backgroundColor = .white
     self.layer.masksToBounds = true
     
-    if smallCircleView != nil {
-      smallCircleView?.removeFromSuperview()
+    if let smallCircleView = smallCircleView {
+      smallCircleView.removeFromSuperview()
     }
 
     let smallCircle = UIView(frame: CGRect(origin: self.bounds.origin,

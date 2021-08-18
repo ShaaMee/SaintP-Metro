@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U96-jX-ykz">
-                                <rect key="frame" x="0.0" y="44" width="414" height="697"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="667"/>
                                 <subviews>
                                     <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPA-GJ-3ho">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="697"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="667"/>
                                         <subviews>
                                             <view multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aB2-5m-wnB" userLabel="MapView">
                                                 <rect key="frame" x="0.0" y="0.0" width="430" height="600"/>
@@ -50,7 +50,7 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpP-gb-yEj">
-                                <rect key="frame" x="0.0" y="741" width="414" height="155"/>
+                                <rect key="frame" x="0.0" y="711" width="414" height="185"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MG6-nR-7JW" userLabel="BarView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
@@ -166,7 +166,7 @@
                                     <constraint firstItem="b4K-eu-ZIN" firstAttribute="top" secondItem="rHb-Tz-JsA" secondAttribute="bottom" constant="15" id="hnd-4t-LjP"/>
                                     <constraint firstItem="rHb-Tz-JsA" firstAttribute="centerX" secondItem="CpP-gb-yEj" secondAttribute="centerX" id="n4N-AB-FMC"/>
                                     <constraint firstItem="OS1-Ew-Ns9" firstAttribute="leading" secondItem="b4K-eu-ZIN" secondAttribute="trailing" constant="10" id="rBp-5D-0Sy"/>
-                                    <constraint firstAttribute="bottom" secondItem="b4K-eu-ZIN" secondAttribute="bottom" constant="30" id="rft-Xu-dWs"/>
+                                    <constraint firstAttribute="bottom" secondItem="b4K-eu-ZIN" secondAttribute="bottom" constant="60" id="rft-Xu-dWs"/>
                                     <constraint firstItem="OS1-Ew-Ns9" firstAttribute="height" secondItem="b4K-eu-ZIN" secondAttribute="height" id="sOs-31-4ql"/>
                                     <constraint firstItem="rSn-Jf-X9c" firstAttribute="leading" secondItem="rHb-Tz-JsA" secondAttribute="trailing" constant="5" id="v4g-zu-UG9"/>
                                     <constraint firstItem="KKl-mL-dMU" firstAttribute="bottom" secondItem="uuv-M1-3Tr" secondAttribute="bottom" id="vs8-qA-CzY"/>

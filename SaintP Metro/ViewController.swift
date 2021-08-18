@@ -181,13 +181,14 @@ class ViewController: UIViewController {
   
   func calculatePath(){
     DispatchQueue.global(qos: .background).async { [weak self] in
-      let result = self?.spbMetro.findShortestPath(between: (self?.fromStation)!, and: (self?.toStation)!) ?? ([],[])
+      guard let fromStation = self?.fromStation, let toStation = self?.toStation else { return }
+      let result = self?.spbMetro.findShortestPath(between: fromStation, and: toStation) ?? ([],[])
       self?.route = result.0
       self?.routeEdges = result.1
       DispatchQueue.main.async { [weak self] in
         self?.drawRoute()
         self?.showDetailsButton.isHidden = false
-        self?.routeTimeLabel.text = "\((self?.toStation)!.shortestDistanceFromStart) мин"
+        self?.routeTimeLabel.text = "\(toStation.shortestDistanceFromStart) мин"
         self?.transfersNumberLabel.text = self?.transfersText
         self?.scaleMapToRoute()
       }

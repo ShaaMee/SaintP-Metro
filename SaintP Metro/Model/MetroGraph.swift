@@ -53,8 +53,8 @@ class MetroGraph {
         $0.shortestDistanceFromStart < $1.shortestDistanceFromStart
       }
       
-      if minVertex != nil {
-        currentVertex = minVertex!
+      if let minVertex = minVertex {
+        currentVertex = minVertex
       }
     }
     
@@ -63,7 +63,9 @@ class MetroGraph {
     route.append(finishVertex)
     
     while prevVertex != nil {
-      route.insert(prevVertex!, at: 0)
+      if let prevVertex = prevVertex {
+        route.insert(prevVertex, at: 0)
+      }
       prevVertex = prevVertex?.previousVertex
     }
     
