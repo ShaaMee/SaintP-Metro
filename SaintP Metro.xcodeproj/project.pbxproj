@@ -54,7 +54,7 @@
 		CEB7DABB26C6C07000F35D9C /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		CEB7DABE26C9380D00F35D9C /* PassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
 		CEB7DAC926CA6F0A00F35D9C /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
-		CEB7DAD026CBA61A00F35D9C /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		CEB7DAD026CBA61A00F35D9C /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CEE234DF26CBA7950026FB5E /* SearchStationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStationTableViewController.swift; sourceTree = "<group>"; };
 		CEE234E326CBA7CA0026FB5E /* SearchStationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStationTableViewCell.swift; sourceTree = "<group>"; };
 		D23481C64FB84F4C5BDE6B66 /* Pods_SaintP_Metro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaintP_Metro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
