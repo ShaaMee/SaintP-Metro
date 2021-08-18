@@ -16,14 +16,12 @@ class DetailsTableViewController: UITableViewController {
   @IBOutlet weak var headerView: TableHeaderView!
   
     override func viewDidLoad() {
-        super.viewDidLoad()
-      
+      super.viewDidLoad()
       
       headerView.layer.cornerRadius = 10
       if !route.isEmpty {
         headerView.titleLabel.text = "\(route.last!.shortestDistanceFromStart) мин.  \(transfersText)"
       }
-      
     }
 
     // MARK: - Table view data source
@@ -50,12 +48,11 @@ class DetailsTableViewController: UITableViewController {
         cell.timeLabel.text = nil
       }
       
-      
       cell.fromStationView.backgroundColor = route.indices.contains(indexPath.row - 1) ? color : .clear
       cell.toStationView.backgroundColor = route.indices.contains(indexPath.row + 1) ? color : .clear
       cell.stationCircleView.backgroundColor = color
       cell.stationCircleView.layer.cornerRadius = cell.stationCircleView.frame.size.width / 2
 
-        return cell
+      return cell
     }
 }

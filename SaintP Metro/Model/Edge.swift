@@ -5,7 +5,7 @@
 //  Created by user on 12.08.2021.
 //
 
-import UIKit
+import Foundation
 
 class Edge: Equatable {
   var vertex1: Station

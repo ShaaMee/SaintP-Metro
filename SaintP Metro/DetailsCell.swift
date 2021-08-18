@@ -15,15 +15,5 @@ class DetailsCell: UITableViewCell {
   @IBOutlet weak var stationCircleView: UIView!
   @IBOutlet weak var fromStationView: UIView!
   @IBOutlet weak var toStationView: UIView!
-  
-  override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
 
 }

@@ -49,7 +49,6 @@ class SearchStationTableViewController: UITableViewController {
       .disposed(by: bag)
     }
   
-  
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let buttonTapped = buttonTapped else { return }
     delegate?.receiveSearchResult(station: searchResult[indexPath.row], button: buttonTapped)

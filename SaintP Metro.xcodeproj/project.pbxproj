@@ -20,6 +20,8 @@
 		CE40508126C5695B00466860 /* MetroGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40508026C5695B00466860 /* MetroGraph.swift */; };
 		CE40508426C57AB900466860 /* BezierLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40508326C57AB800466860 /* BezierLine.swift */; };
 		CE54F1CC26C471210049A4F5 /* StationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54F1CB26C471200049A4F5 /* StationButton.swift */; };
+		CEB0895C26CD2FBB000F3029 /* StationsCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0895B26CD2FB9000F3029 /* StationsCreator.swift */; };
+		CEB0896726CD3C04000F3029 /* SearchStationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB0896626CD3C04000F3029 /* SearchStationHeaderView.swift */; };
 		CEB7DAB926C6C03400F35D9C /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7DAB826C6C03300F35D9C /* DetailsTableViewController.swift */; };
 		CEB7DABC26C6C07000F35D9C /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7DABB26C6C07000F35D9C /* DetailsCell.swift */; };
 		CEB7DABF26C9380E00F35D9C /* PassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7DABE26C9380D00F35D9C /* PassthroughView.swift */; };
@@ -27,7 +29,6 @@
 		CEB7DAD126CBA61A00F35D9C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = CEB7DAD026CBA61A00F35D9C /* Podfile */; };
 		CEE234E026CBA7950026FB5E /* SearchStationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE234DF26CBA7950026FB5E /* SearchStationTableViewController.swift */; };
 		CEE234E426CBA7CA0026FB5E /* SearchStationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE234E326CBA7CA0026FB5E /* SearchStationTableViewCell.swift */; };
-		CEE234E726CBA80F0026FB5E /* SearchStationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE234E626CBA80F0026FB5E /* SearchStationHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		CE40508026C5695B00466860 /* MetroGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroGraph.swift; sourceTree = "<group>"; };
 		CE40508326C57AB800466860 /* BezierLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierLine.swift; sourceTree = "<group>"; };
 		CE54F1CB26C471200049A4F5 /* StationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationButton.swift; sourceTree = "<group>"; };
+		CEB0895B26CD2FB9000F3029 /* StationsCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsCreator.swift; sourceTree = "<group>"; };
+		CEB0896626CD3C04000F3029 /* SearchStationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStationHeaderView.swift; sourceTree = "<group>"; };
 		CEB7DAB826C6C03300F35D9C /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
 		CEB7DABB26C6C07000F35D9C /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
 		CEB7DABE26C9380D00F35D9C /* PassthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughView.swift; sourceTree = "<group>"; };
@@ -54,7 +57,6 @@
 		CEB7DAD026CBA61A00F35D9C /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		CEE234DF26CBA7950026FB5E /* SearchStationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStationTableViewController.swift; sourceTree = "<group>"; };
 		CEE234E326CBA7CA0026FB5E /* SearchStationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStationTableViewCell.swift; sourceTree = "<group>"; };
-		CEE234E626CBA80F0026FB5E /* SearchStationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStationHeaderView.swift; sourceTree = "<group>"; };
 		D23481C64FB84F4C5BDE6B66 /* Pods_SaintP_Metro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaintP_Metro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,24 +115,41 @@
 				CE375CC926C163B800917607 /* AppDelegate.swift */,
 				CE375CCB26C163B800917607 /* SceneDelegate.swift */,
 				CE375CCD26C163B800917607 /* ViewController.swift */,
+				CE40508326C57AB800466860 /* BezierLine.swift */,
+				CE54F1CB26C471200049A4F5 /* StationButton.swift */,
 				CEB7DABE26C9380D00F35D9C /* PassthroughView.swift */,
 				CEB7DAB826C6C03300F35D9C /* DetailsTableViewController.swift */,
 				CEB7DAC926CA6F0A00F35D9C /* TableHeaderView.swift */,
 				CEB7DABB26C6C07000F35D9C /* DetailsCell.swift */,
 				CEE234DF26CBA7950026FB5E /* SearchStationTableViewController.swift */,
 				CEE234E326CBA7CA0026FB5E /* SearchStationTableViewCell.swift */,
-				CEE234E626CBA80F0026FB5E /* SearchStationHeaderView.swift */,
+				CEB0896626CD3C04000F3029 /* SearchStationHeaderView.swift */,
+				CEB0895B26CD2FB9000F3029 /* StationsCreator.swift */,
 				CE375CCF26C163B800917607 /* Main.storyboard */,
-				CE40508026C5695B00466860 /* MetroGraph.swift */,
-				CE40507A26C5681A00466860 /* Station.swift */,
-				CE40507D26C5686000466860 /* Edge.swift */,
-				CE40508326C57AB800466860 /* BezierLine.swift */,
-				CE54F1CB26C471200049A4F5 /* StationButton.swift */,
+				CEB0895F26CD36CD000F3029 /* Model */,
+				CEB0896426CD379B000F3029 /* Helper */,
 				CE375CD226C163BC00917607 /* Assets.xcassets */,
 				CE375CD426C163BC00917607 /* LaunchScreen.storyboard */,
 				CE375CD726C163BC00917607 /* Info.plist */,
 			);
 			path = "SaintP Metro";
+			sourceTree = "<group>";
+		};
+		CEB0895F26CD36CD000F3029 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE40508026C5695B00466860 /* MetroGraph.swift */,
+				CE40507A26C5681A00466860 /* Station.swift */,
+				CE40507D26C5686000466860 /* Edge.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEB0896426CD379B000F3029 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +272,9 @@
 				CE54F1CC26C471210049A4F5 /* StationButton.swift in Sources */,
 				CEE234E026CBA7950026FB5E /* SearchStationTableViewController.swift in Sources */,
 				CE40507B26C5681A00466860 /* Station.swift in Sources */,
+				CEB0896726CD3C04000F3029 /* SearchStationHeaderView.swift in Sources */,
 				CEE234E426CBA7CA0026FB5E /* SearchStationTableViewCell.swift in Sources */,
+				CEB0895C26CD2FBB000F3029 /* StationsCreator.swift in Sources */,
 				CEB7DABC26C6C07000F35D9C /* DetailsCell.swift in Sources */,
 				CE40507E26C5686000466860 /* Edge.swift in Sources */,
 				CEB7DABF26C9380E00F35D9C /* PassthroughView.swift in Sources */,
@@ -262,7 +283,6 @@
 				CE40508426C57AB900466860 /* BezierLine.swift in Sources */,
 				CE375CCA26C163B800917607 /* AppDelegate.swift in Sources */,
 				CE375CCC26C163B800917607 /* SceneDelegate.swift in Sources */,
-				CEE234E726CBA80F0026FB5E /* SearchStationHeaderView.swift in Sources */,
 				CE40508126C5695B00466860 /* MetroGraph.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
