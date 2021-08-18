@@ -38,7 +38,8 @@ class SearchStationTableViewController: UITableViewController {
         }
       
       search.bind(to: tableView.rx.items(cellIdentifier: "showSearchView", cellType: SearchStationTableViewCell.self)) { (index, element, cell) in
-        cell.textLabel?.text = element.name
+        cell.stationNameLabel.text = element.name
+        cell.circleView.backgroundColor = element.button.color
       }
       .disposed(by: bag)
       

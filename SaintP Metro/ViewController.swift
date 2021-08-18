@@ -15,6 +15,8 @@ class ViewController: UIViewController {
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var fromStationButton: UIButton!
   @IBOutlet weak var toStationButton: UIButton!
+  @IBOutlet weak var routeTimeLabel: UILabel!
+  @IBOutlet weak var transfersNumberLabel: UILabel!
   
   private var buttonDiameter: CGFloat {
     let side = min(self.view.layer.frame.width, self.view.layer.frame.height)
@@ -25,6 +27,30 @@ class ViewController: UIViewController {
 
   private var route = [Station]()
   private var routeEdges = [Edge]()
+  
+  private var numberOfTransfers: Int {
+    var counter = 0
+    guard !route.isEmpty else { return 0 }
+    for (index, station) in route.enumerated() {
+      guard route.indices.contains(index + 1) else { return counter }
+      if station.button.color != route[index + 1].button.color {
+        counter += 1
+      }
+    }
+    return counter
+  }
+  
+  private var transfersText: String {
+    let strNumberOfTransfers = String(numberOfTransfers)
+    switch strNumberOfTransfers.last {
+    case "1": return "\(numberOfTransfers) пересадка"
+    case "2", "3", "4": return "\(numberOfTransfers) пересадки"
+    case "0": if numberOfTransfers == 0 {
+      return "Без пересадок"
+    } else { return "\(numberOfTransfers) пересадок"}
+    default: return "\(numberOfTransfers) пересадок"
+    }
+  }
   
   private var fromStation: Station?
   private var toStation: Station?
@@ -37,6 +63,8 @@ class ViewController: UIViewController {
     scrollView.decelerationRate = .fast
     scrollView.showsVerticalScrollIndicator = false
     scrollView.showsHorizontalScrollIndicator = false
+    routeTimeLabel.text = nil
+    transfersNumberLabel.text = nil
     
     let scrollViewSize = scrollView.bounds.size
     let mapViewSize = mapView.bounds.size
@@ -45,10 +73,8 @@ class ViewController: UIViewController {
     let yScale = scrollViewSize.height / mapViewSize.height
     let minScale = min(xScale, yScale)
     
-    
     scrollView.minimumZoomScale = minScale
     scrollView.maximumZoomScale = 3
-    
     
     toStationButton.layer.cornerRadius = fromStationButton.frame.size.height / 4
     showDetailsButton.layer.cornerRadius = showDetailsButton.bounds.height / 4
@@ -336,7 +362,7 @@ class ViewController: UIViewController {
     default:
       guard let overlayView = overlayView else { return }
       overlayView.removeFromSuperview()
-      
+      clearTimeAndTransfersLabel()
       showDetailsButton.isHidden = true
       fromStation?.button.smallCircle(buttonDiameter: buttonDiameter)
       toStation?.button.smallCircle(buttonDiameter: buttonDiameter)
@@ -378,7 +404,9 @@ class ViewController: UIViewController {
       DispatchQueue.main.async { [weak self] in
         self?.drawRoute()
         self?.showDetailsButton.isHidden = false
-
+        self?.routeTimeLabel.text = "\((self?.toStation)!.shortestDistanceFromStart) мин"
+        self?.transfersNumberLabel.text = self?.transfersText
+        self?.scaleMapToRoute()
       }
     }
   }
@@ -410,7 +438,6 @@ class ViewController: UIViewController {
   }
   
   @IBAction func showDetails(_ sender: UIButton) {
-    performSegue(withIdentifier: "showRoute", sender: sender)
   }
   
   @IBAction func resetRoute(_ sender: UIButton) {
@@ -421,6 +448,13 @@ class ViewController: UIViewController {
     toStation = nil
     updateRouteLabels()
     showDetailsButton.isHidden = true
+    clearTimeAndTransfersLabel()
+    scrollView.zoom(to: mapView.bounds, animated: true)
+  }
+  
+  func clearTimeAndTransfersLabel(){
+    routeTimeLabel.text = nil
+    transfersNumberLabel.text = nil
   }
   
   @IBAction func switchStations(_ sender: UIButton) {
@@ -433,7 +467,6 @@ class ViewController: UIViewController {
   }
   
   @IBAction func searchForStation(_ sender: UIButton) {
-    performSegue(withIdentifier: "showSearchView", sender: sender)
   }
   
   
@@ -443,6 +476,8 @@ class ViewController: UIViewController {
       guard let destinationVC = segue.destination as? DetailsTableViewController else { return }
       destinationVC.route = self.route
       destinationVC.routeEdges = self.routeEdges
+      destinationVC.numberOfTransfers = self.numberOfTransfers
+      destinationVC.transfersText = self.transfersText
     }
     
     if segue.identifier == "showSearchView" {
@@ -455,7 +490,22 @@ class ViewController: UIViewController {
       destinationVC.buttonTapped = sender as? UIButton
       destinationVC.delegate = self
     }
+  }
+  
+  func scaleMapToRoute(){
+    var minX: CGFloat = CGFloat(Int.max)
+    var minY: CGFloat = CGFloat(Int.max)
+    var maxX: CGFloat = CGFloat(Int.min)
+    var maxY: CGFloat = CGFloat(Int.min)
+
+    for station in route {
+      minX = min(minX, min(station.button.frame.minX, station.button.label.frame.minX))
+      minY = min(minY, min(station.button.frame.minY, station.button.label.frame.minY))
+      maxX = max(maxX, max(station.button.frame.maxX, station.button.label.frame.maxX))
+      maxY = max(maxY, max(station.button.frame.maxY, station.button.label.frame.maxY))
+    }
     
+    scrollView.zoom(to: CGRect(x: minX - 10, y: minY - 10, width: maxX - minX + 20, height: maxY - minY + 20), animated: true)
   }
 }
 
@@ -468,6 +518,7 @@ extension ViewController: UIScrollViewDelegate {
 extension ViewController: SearchStationTableViewDelegate {
   func receiveSearchResult(station: Station, button: UIButton){
     if fromStation != nil && button == fromStationButton {
+      
       fromStation?.button.smallCircle(buttonDiameter: buttonDiameter)
         fromStation = nil
         stationButtonTapped(sender: station.button)
